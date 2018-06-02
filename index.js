@@ -1,3 +1,4 @@
+const {URL} = require('url');
 /**
  * This is a driver program, whose task is to take parameters from the agruments passed.
  * or fallback to default parameters and then execute the scrapper method.
@@ -17,19 +18,23 @@ function getArgvParams() {
             case 'i':
                 let url = arg.slice(3)
                 try {
+                    // Try parsing the url, to make sure the url is correct
                     url = new URL(url)
                     agg.url = url.href
                 } catch (e) { console.error(e) }
                 break
             case 'o':
+                // Take the output file name as is.
                 agg.file = arg.slice(3)
                 break;
             case 'm':
                 let m = arg.slice(3)
+                // If the arg is Infinity, assign Positive inifinity
                 if (m === 'Infinity') {
                     agg.maxPagesToScrape = Number.POSITIVE_INFINITY
                 } else {
                     try {
+                        // Try to parse as Int. If failed, use the defaults
                         m = parseInt(m, 10)
                         agg.maxPagesToScrape = m
                     } catch (e) { console.error(e) }
@@ -44,6 +49,7 @@ function getArgvParams() {
         }
         return agg
     }, {
+        // These are the default values
             url: 'https://medium.com/',
             file: 'output.csv',
             throttleCount: 5,

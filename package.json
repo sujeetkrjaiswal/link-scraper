@@ -7,7 +7,7 @@
     
   },
   "scripts": {
-    "start": "node index.js -i='https://medium.com' -o='links.csv' -w=2 -m=Infinity " 
+    "start": "node index.js -i='https://google.com' -o='links.csv' -w=2 -m=100" 
   },
   "repository": {
     "type": "git",
