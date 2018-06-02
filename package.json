@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-scraper-for-fetching-links",
+  "version": "1.0.0",
+  "description": "A Nodejs application, without using any external dependency to fetch all the links within a site. It processes all the links which is in the same domain as the first url provided.",
+  "main": "index.js",
+  "engines": {
+    
+  },
+  "scripts": {
+    "start": "node index.js -i='https://medium.com' -o='links.csv' -w=2 -m=Infinity " 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujeetkrjaiswal/nodejs-scraper-for-fetching-links.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sujeetkrjaiswal/nodejs-scraper-for-fetching-links/issues"
+  },
+  "homepage": "https://github.com/sujeetkrjaiswal/nodejs-scraper-for-fetching-links#readme"
+}
