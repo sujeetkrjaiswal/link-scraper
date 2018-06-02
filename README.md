@@ -1,6 +1,7 @@
 # nodejs-scraper-for-fetching-links
 A Nodejs application, without using any external dependency to fetch all the links within a site. It processes all the links which is in the same domain as the first url provided, and others are not visited recursively, but are added in the output.
 
+All the results will be append to a file. Therefore, if you run the same command twice, with same output file, remember that It will keep appending it.
 **NOTE**  The program will not work on version below `6.14.2 LTS`
 
 **Example**
@@ -15,6 +16,9 @@ It will execute the following
 ```bash
 node index.js -i='https://medium.com' -o='links.csv' -w=2 -m='Infinity'
 ```
+
+* `sample-log.txt` is the log that you see on your terminal when you run it. It will generate links.csv
+* `sample-output.csv` is a sample output file that you will get when you run this.
 
 ## Sample Driver Program
 A sample driver program is also provides `index.js`, which will read the above parameters from command line argument. Below are the list of arguments it expects and its default value for the driver program.
