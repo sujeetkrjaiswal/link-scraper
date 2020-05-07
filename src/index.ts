@@ -7,7 +7,6 @@ import { Writer } from './writer.model'
 
 async function init() {
   const configuration = await getConfiguration()
-  console.log(configuration)
   const { url, outputFileFormat, outputFileName, depth } = configuration
   console.info(chalk.blue(`Scraper initiated for ${url} until depth of ${depth}`))
   const fileWriter: Writer = new ScrapperFileWriter(outputFileName, outputFileFormat)

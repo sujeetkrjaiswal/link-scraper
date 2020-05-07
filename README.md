@@ -1,10 +1,34 @@
 # Link Scraper
 
+![CI_NPM_PUBLISH](https://github.com/sujeetkrjaiswal/link-scraper/workflows/CI_NPM_PUBLISH/badge.svg?branch=master)
+
+
 A command-line utility to fetch Links of a given seed URL. It will also recursively fetch links for a given depth.
 
 This utility provides an interactive command-line user interface as well as command line options.
 
 ## Usage
+
+### Command line options
+
+```text
+  -u, --url <string>          seed url
+  -w, --whitelisted <string>  Whitelisted url
+  -o, --outFile <string>      Output file name
+  -e, --extension <string>    depth limit to recursively scrape
+  -d, --depth <number>        depth limit to recursively scrape
+  -q, --query                 Consider Query Params for URL Uniqueness
+  -h, --hash                  Ignore Hash Params for URL Uniqueness
+  -s, --secure                Scrape only secured URLs (https: only)
+  --no-hash                   Ignore Hash Params for URL Uniqueness
+  --no-query                  Ignore Hash Params for URL Uniqueness
+  --no-secure                 Allow scraping Non secure URLs (http: & https:)
+  --help                      display help for command
+```
+
+### Using CLI Interactive Questions
+
+![Medium.com sample Log](assets/medium.com-sample.png)
 
 ### Example 1
 Scrape `Medium.com` for `depth 2` for only `secure` urls i.e. `https:` and for whitelisted domains `medium.com`, `help.medium.com`
@@ -28,20 +52,4 @@ Seed URL, whitelisted domains and file path will be entered from command line.
 link-scraper -qs --no-hash -d 2 -e tsv
 ```
 
-## Command line options
-
-```text
-  -u, --url <string>          seed url
-  -w, --whitelisted <string>  Whitelisted url
-  -o, --outFile <string>      Output file name
-  -e, --extension <string>    depth limit to recursively scrape
-  -d, --depth <number>        depth limit to recursively scrape
-  -q, --query                 Consider Query Params for URL Uniqueness
-  -h, --hash                  Ignore Hash Params for URL Uniqueness
-  -s, --secure                Scrape only secured URLs (https: only)
-  --no-hash                   Ignore Hash Params for URL Uniqueness
-  --no-query                  Ignore Hash Params for URL Uniqueness
-  --no-secure                 Allow scraping Non secure URLs (http: & https:)
-  --help                      display help for command
-```
 

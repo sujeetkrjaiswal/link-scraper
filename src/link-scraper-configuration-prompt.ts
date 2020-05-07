@@ -42,7 +42,7 @@ program.parse(process.argv)
 
 export async function getConfiguration(): Promise<Configuration> {
   const opts: CommandLineConfiguration = program.opts() as CommandLineConfiguration
-  console.log(opts)
+  // console.log(opts)
   const response = await inquirer.prompt([
     {
       type: 'input',
