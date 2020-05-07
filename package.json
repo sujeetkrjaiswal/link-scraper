@@ -1,6 +1,6 @@
 {
   "name": "@utils-js/link-scraper",
-  "version": "1.0.0-alpha-0.1",
+  "version": "1.0.1-alpha",
   "description": "A command line utility to get all links of a URL, recursively to a given depth for whitelisted domains",
   "main": "bin/index.js",
   "engines": {
