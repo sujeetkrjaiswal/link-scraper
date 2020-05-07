@@ -1,5 +1,6 @@
+import chalk from 'chalk'
 import { WriteStream, createWriteStream } from 'fs'
-import * as path from 'path'
+import { resolve } from 'path'
 import { Writer, Link } from './writer.model'
 
 export class ScrapperFileWriter implements Writer {
@@ -11,10 +12,14 @@ export class ScrapperFileWriter implements Writer {
 
   constructor(fileName: string, outputFileFormat: Set<'md' | 'tsv'>) {
     if (outputFileFormat.has('md')) {
-      this.mdWriteStream = createWriteStream(path.resolve(__dirname, `${fileName}.md`), { encoding: 'utf8' })
+      const path = resolve(process.cwd(), `${fileName}.md`)
+      this.mdWriteStream = createWriteStream(path, { encoding: 'utf8' })
+      console.info(chalk.cyan(`Markdown file will be created at ${path}`))
     }
     if (outputFileFormat.has('tsv')) {
-      this.tsvWriteStream = createWriteStream(path.resolve(__dirname, `${fileName}.tsv`), { encoding: 'utf8' })
+      const path = resolve(process.cwd(), `${fileName}.tsv`)
+      this.tsvWriteStream = createWriteStream(path, { encoding: 'utf8' })
+      console.info(chalk.cyan(`TSV file will be created at ${path}`))
       this.tsvWriteStream.write(`scrapedURL\turlInPage`)
     }
   }

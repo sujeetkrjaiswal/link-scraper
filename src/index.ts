@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import chalk from 'chalk'
 import { getConfiguration } from './link-scraper-configuration-prompt'
 import { LinkScraper } from './link-scraper'
